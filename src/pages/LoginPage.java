@@ -23,7 +23,13 @@ public class LoginPage extends BasePage{
 
     }
     public void ingresarCredencialesCorrectas(String user,String pass){
+        this.ingresarCredenciales(user, pass);
+    }
+    public void ingresarCredencialesIncorrectas(String incorrectUser, String incorrectPassword){
+        this.ingresarCredenciales(incorrectUser, incorrectPassword);
+    }
 
+    private void ingresarCredenciales(String user, String pass) {
         userNameTxt = driver.findElement(By.id("username"));
         passwordTxt= driver.findElement(By.id("password"));
         loginBtn = driver.findElement(By.xpath("//input[@type = 'submit']"));
@@ -31,9 +37,7 @@ public class LoginPage extends BasePage{
         userNameTxt.sendKeys(user);
         passwordTxt.sendKeys(pass);
         loginBtn.click();
-
     }
-    public void ingresarCredencialesIncorrectas(String incorrectUser, String incorrectPassword){}
 
     public void validateErrorMessage() {
     }

@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 
@@ -13,6 +14,7 @@ public class HomePage extends BasePage {
 
     public WebElement loginLnk; //xpath: "//a[contains(text(), 'log')]"
 
+    @FindBy(id = "flash")
     public WebElement welcomeLbl; //id = "flash"
 
     public HomePage(WebDriver driverBaseTest) {
